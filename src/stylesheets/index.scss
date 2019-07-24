@@ -1,0 +1,15 @@
+@import './globals/colors.scss';
+@import './globals/fonts.scss';
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-style: "800";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

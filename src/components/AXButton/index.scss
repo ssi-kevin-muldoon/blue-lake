@@ -1,0 +1,130 @@
+@import '../../stylesheets/globals/_colors.scss';
+@import '../../stylesheets/globals/_fonts.scss';
+@import '../../stylesheets/globals/_spaces.scss';
+
+$height: 38px;
+$min-width: 120px;
+$font-size: 14px;
+
+/** buttons **/
+$buttons-line-height: 1;
+$buttons-min-width: 120px;
+$buttons-text-align: center;
+$buttons-before-margin: 10px;
+$disabled-opacity: 0.35;
+$buttons-font-size: 14px;
+
+.ax-btn  {
+  font-weight: $semi-bold;
+  font-size: $buttons-font-size;
+  text-align: $buttons-text-align;
+  color: $white;
+  height: $height;
+  min-width: $buttons-min-width;
+  border: none;
+  border-radius: $space-xxs;
+  padding: 11px 11px;
+  margin: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ax-btn-primary {
+    background: $primary;
+    
+    &:hover {
+        background: $primary-dark;
+      }
+      &:active {
+          background: $primary-deep;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0 0 0 $space-xxs $primary-bright;
+      }
+      &:disabled {
+        background: $primary-bright;
+        &:hover {
+            background: $primary-bright;
+        }  
+    }        
+}
+
+.ax-btn-secondary {
+    font-weight: $normal;
+    color: $neutral-800;
+    background: $white;
+    border: 1px solid $secondary-075;
+    outline-offset: -1px;
+
+    &:hover {
+        background: $secondary-075;
+      }
+      &:active {
+        font-weight: $semi-bold;
+        color: $white;          
+        background: $primary;
+        border: none;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0 0 0 $space-xxs $primary-bright;
+      }
+      &:disabled {
+          color: $neutral-200;
+          &:hover {
+            background: $white;
+        }            
+    }
+}
+
+.ax-btn-tertiary {
+    background: $tertiary;
+    &:hover {
+        background: $tertiary-dark;
+      }
+      &:active {
+          background: $tertiary-deep;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0 0 0 $space-xxs $tertiary-bright;
+      }
+      &:disabled {
+        background: $tertiary-bright;
+    }
+}
+
+// $(":input").blur(function() {
+//     //do stuff
+//   });
+
+// div {
+//     color: blue;
+//   }
+//   div:not(:focus):hover {
+//     color: red;
+//   }
+//   div:focus {
+//     outline: none;
+//   }
+
+// .ax-btn {
+//     display: inline-flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     text-align: center;
+//     color: $white;
+//     background: $primary;
+//     height: $height;
+//     min-width: $min-width;
+//     font-weight: $font-weight-semibold;
+//     font-size: $font-size;
+//     border-radius: $space-xxs;
+    // &:hover {
+    //     background: $primary-dark;
+    // }
+    // &:active {
+    //     background: $primary-deep;
+    // }        
+//   }
