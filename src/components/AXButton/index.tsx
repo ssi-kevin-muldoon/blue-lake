@@ -1,23 +1,19 @@
 import React, { Component, createRef } from 'react';
 import './index.scss';
 
-export enum Type {
-    Primary = "primary",
-    Secondary = "secondary",
-    Tertiary = "tertiary",
-    Success = "success",
-    Warning = "warning",
-    Danger = "danger",
-    Info = "info",
-    Link = "link",
+export enum type {
+    primary = "primary",
+    secondary = "secondary",
+    tertiary = "tertiary",
+    success = "success",
+    info = "info",
+    warning = "warning",
+    danger = "danger",
+    link = "link",
 }
 
 interface IAXButtonProps {
-    type: Type,
-    secondary?: string,
-    tertiary?: string,
-    positive?: string,
-    negative?: string,
+    type: type,
     disabled?: boolean,
     text?: string,
     icon?: string,
@@ -33,7 +29,7 @@ export class AXButton extends Component<IAXButtonProps> {
 
     static defaultProps = {
         title: 'OK',
-        variant: Type.Primary
+        variant: type.primary
     }
 
     constructor(props: IAXButtonProps) {

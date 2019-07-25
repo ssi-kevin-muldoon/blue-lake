@@ -2,31 +2,28 @@
 @import '../../stylesheets/globals/_fonts.scss';
 @import '../../stylesheets/globals/_spaces.scss';
 
+$font-family: "Open Sans";
 $height: 38px;
-$min-width: 120px;
 $font-size: 14px;
+$min-width: 120px;
 
 /** buttons **/
-$buttons-line-height: 1;
 $buttons-min-width: 120px;
-$buttons-text-align: center;
 $buttons-before-margin: 10px;
-$disabled-opacity: 0.35;
-$buttons-font-size: 14px;
 
 .ax-btn  {
+  font-family: $font-family;
   font-weight: $semi-bold;
-  font-size: $buttons-font-size;
-  text-align: $buttons-text-align;
-  color: $white;
-  height: $height;
-  min-width: $buttons-min-width;
-  border: none;
-  border-radius: $space-xxs;
-  padding: 11px 11px;
-  margin: 16px;
+  font-size: $font-size;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  color: $white;
+  height: $height;
+  min-width: $min-width;
+  border: none;
+  border-radius: $space-xxs;
+  padding: 0px $space-m 1px $space-m;
+  margin: $space-m $space-m $space-m 0px; // remove this later, make 'margin' a function of containers.
 }
 
 .ax-btn-primary {
@@ -38,9 +35,11 @@ $buttons-font-size: 14px;
       &:active {
           background: $primary-deep;
       }
-      &:focus {
+      &:focus {          
           outline: none;
-          box-shadow: 0 0 0 $space-xxs $primary-bright;
+          box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
       }
       &:disabled {
         background: $primary-bright;
@@ -55,8 +54,6 @@ $buttons-font-size: 14px;
     color: $neutral-800;
     background: $white;
     border: 1px solid $secondary-075;
-    outline-offset: -1px;
-
     &:hover {
         background: $secondary-075;
       }
@@ -64,11 +61,14 @@ $buttons-font-size: 14px;
         font-weight: $semi-bold;
         color: $white;          
         background: $primary;
-        border: none;
+        border: 1px solid $primary;
       }
       &:focus {
           outline: none;
+          border: none;
           box-shadow: 0 0 0 $space-xxs $primary-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;          
       }
       &:disabled {
           color: $neutral-200;
@@ -79,52 +79,145 @@ $buttons-font-size: 14px;
 }
 
 .ax-btn-tertiary {
-    background: $tertiary;
+    font-weight: $normal;
+    color: $neutral-800;
+    background: transparent;
     &:hover {
-        background: $tertiary-dark;
+        color: $primary;
       }
       &:active {
-          background: $tertiary-deep;
+        color: $primary-800;          
       }
       &:focus {
           outline: none;
-          box-shadow: 0 0 0 $space-xxs $tertiary-bright;
+          border: none;
+          box-shadow: 0 0 0 $space-xxs $primary-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;          
       }
       &:disabled {
-        background: $tertiary-bright;
+          color: $neutral-200;
+          &:hover {
+            background: transparent;
+        }            
     }
 }
 
-// $(":input").blur(function() {
-//     //do stuff
-//   });
+.ax-btn-success {
+    background: $success;
+    
+    &:hover {
+        background: $success-dark;
+      }
+      &:active {
+          background: $success-deep;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0px 0px 0px $space-xxs $success-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $success-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $success-bright;
+      }
+      &:disabled {
+        background: $success-bright;
+        &:hover {
+            background: $success-bright;
+        }  
+    }        
+}
 
-// div {
-//     color: blue;
-//   }
-//   div:not(:focus):hover {
-//     color: red;
-//   }
-//   div:focus {
-//     outline: none;
-//   }
+.ax-btn-info {
+    background: $info;
+    
+    &:hover {
+        background: $info-dark;
+      }
+      &:active {
+          background: $info-deep;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0px 0px 0px $space-xxs $info-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $info-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $info-bright;
+      }
+      &:disabled {
+        background: $info-bright;
+        &:hover {
+            background: $info-bright;
+        }  
+    }        
+}
 
-// .ax-btn {
-//     display: inline-flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     text-align: center;
-//     color: $white;
-//     background: $primary;
-//     height: $height;
-//     min-width: $min-width;
-//     font-weight: $font-weight-semibold;
-//     font-size: $font-size;
-//     border-radius: $space-xxs;
-    // &:hover {
-    //     background: $primary-dark;
-    // }
-    // &:active {
-    //     background: $primary-deep;
-    // }        
-//   }
+.ax-btn-warning {
+    background: $warning;
+    
+    &:hover {
+        background: $warning-dark;
+      }
+      &:active {
+          background: $warning-deep;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0px 0px 0px $space-xxs $warning-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $warning-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $warning-bright;
+      }
+      &:disabled {
+        background: $warning-bright;
+        &:hover {
+            background: $warning-bright;
+        }  
+    }        
+}
+
+.ax-btn-danger {
+    background: $danger;
+    
+    &:hover {
+        background: $danger-dark;
+      }
+      &:active {
+          background: $danger-deep;
+      }
+      &:focus {
+          outline: none;
+          box-shadow: 0px 0px 0px $space-xxs $danger-bright;
+          -moz-box-shadow: 0px 0px 0px $space-xxs $danger-bright;
+          -webkit-box-shadow: 0px 0px 0px $space-xxs $danger-bright;
+      }
+      &:disabled {
+        background: $danger-bright;
+        &:hover {
+            background: $danger-bright;
+        }  
+    }        
+}
+
+.ax-btn-link {
+    color: $primary;
+    background: transparent;
+    min-width: unset;
+    &:hover {
+        color: $primary-dark;
+        text-decoration: underline;        
+      }
+      &:active {
+        color: $primary-deep;
+      }
+      &:focus {
+          outline: none;
+          text-decoration: underline;        
+
+        //   box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+        //   -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+        //   -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+      }
+      &:disabled {
+        background: $neutral-200;
+        &:hover {
+            background: transparent;
+        }  
+    }        
+}
