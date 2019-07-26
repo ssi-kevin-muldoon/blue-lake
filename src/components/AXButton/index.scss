@@ -3,13 +3,17 @@
 @import '../../stylesheets/globals/_spaces.scss';
 
 $font-family: "Open Sans";
-$height: 38px;
+$height: 36px;
 $font-size: 14px;
 $min-width: 120px;
 
 /** buttons **/
 $buttons-min-width: 120px;
 $buttons-before-margin: 10px;
+
+$default-button-icon-padding: 11px 11px;
+$button-no-border-padding: 11px 16px;
+$button-border-padding:10px 16px;
 
 .ax-btn  {
   font-family: $font-family;
@@ -45,8 +49,14 @@ $buttons-before-margin: 10px;
         background: $primary-bright;
         &:hover {
             background: $primary-bright;
-        }  
-    }        
+        }
+    }
+    .axiom-icon {
+        justify-content: flex-start;
+        text-align: left;
+        color: $white;
+        margin-right: $space-s;
+      }         
 }
 
 .ax-btn-secondary {
@@ -76,6 +86,12 @@ $buttons-before-margin: 10px;
             background: $white;
         }            
     }
+    .axiom-icon {
+        justify-content: flex-start;
+        text-align: left;
+        color: $primary;
+        margin-right: $space-s;
+      }    
 }
 
 .ax-btn-tertiary {

@@ -16,8 +16,8 @@ interface IAXButtonProps {
     type: type,
     disabled?: boolean,
     text?: string,
-    icon?: string,
-    iconTrailing?: string,
+    icon_left?: object,
+    icon_right?: string,
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
     title: string,
 }
@@ -63,15 +63,15 @@ export class AXButton extends Component<IAXButtonProps> {
         result.push(baseClass);
         result.push(baseClass + '-' + this.props.type)
 
-        if (this.props.icon && this.props.children && this.props.iconTrailing) {
+        if (this.props.icon_left && this.props.children && this.props.icon_right) {
             result.push(`${baseClass}-icon-text-icon`);
-        } else if (this.props.icon && this.props.children) {
+        } else if (this.props.icon_left && this.props.children) {
             result.push(`${baseClass}-icon-text`);
-        } else if (this.props.children && this.props.iconTrailing) {
+        } else if (this.props.children && this.props.icon_right) {
             result.push(`${baseClass}-text-icon`);
         } else if (this.props.children) {
             result.push(`${baseClass}-text`);
-        } else if (this.props.icon) {
+        } else if (this.props.icon_left) {
             result.push(`${baseClass}-icon`);
         } else {
             throw "Axiom Design System does not recognize this button format.";
@@ -87,7 +87,8 @@ export class AXButton extends Component<IAXButtonProps> {
             disabled={this.props.disabled}
             onMouseDown={this.onMouseDown}
             onClick={this.onClick}>
-            {this.props.children}
+                {this.props.icon_left}
+                {this.props.children}
         </button>
     }
 
