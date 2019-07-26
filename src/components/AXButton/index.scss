@@ -2,20 +2,19 @@
 @import '../../stylesheets/globals/_fonts.scss';
 @import '../../stylesheets/globals/_spaces.scss';
 
+@mixin focus-ring($color) {
+    outline: none;
+    box-shadow: 0px 0px 0px $space-xxs $color;
+    -moz-box-shadow: 0px 0px 0px $space-xxs $color;
+    -webkit-box-shadow: 0px 0px 0px $space-xxs $color;
+}
+
 $font-family: "Open Sans";
 $height: 36px;
 $font-size: 14px;
 $min-width: 120px;
 
-/** buttons **/
-$buttons-min-width: 120px;
-$buttons-before-margin: 10px;
-
-$default-button-icon-padding: 11px 11px;
-$button-no-border-padding: 11px 16px;
-$button-border-padding:10px 16px;
-
-.ax-btn  {
+.ax-btn {
   font-family: $font-family;
   font-weight: $semi-bold;
   font-size: $font-size;
@@ -39,25 +38,22 @@ $button-border-padding:10px 16px;
       &:active {
           background: $primary-deep;
       }
-      &:focus {          
-          outline: none;
-          box-shadow: 0px 0px 0px $space-xxs $primary-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+      &:focus {
+          @include focus-ring($primary-bright);
       }
       &:disabled {
         background: $primary-bright;
         &:hover {
             background: $primary-bright;
-        }
-    }
-    .axiom-icon {
-        justify-content: flex-start;
-        text-align: left;
-        color: $white;
-        margin-right: $space-s;
-      }         
+        }  
+    }        
 }
+
+.axiom-icon {
+    justify-content: flex-start;
+    text-align: left;
+    margin-right: $space-s;
+  }
 
 .ax-btn-secondary {
     font-weight: $normal;
@@ -68,20 +64,22 @@ $button-border-padding:10px 16px;
         background: $secondary-075;
       }
       &:active {
-        font-weight: $semi-bold;
+        // font-weight: $semi-bold;
         color: $white;          
         background: $primary;
         border: 1px solid $primary;
+        .axiom-icon {
+            color:$white;
+          }
       }
       &:focus {
-          outline: none;
-          border: none;
-          box-shadow: 0 0 0 $space-xxs $primary-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;          
+          @include focus-ring($primary-bright);
       }
       &:disabled {
           color: $neutral-200;
+          .axiom-icon {
+            color:$neutral-200;
+          }
           &:hover {
             background: $white;
         }            
@@ -91,7 +89,7 @@ $button-border-padding:10px 16px;
         text-align: left;
         color: $primary;
         margin-right: $space-s;
-      }    
+      }
 }
 
 .ax-btn-tertiary {
@@ -105,11 +103,7 @@ $button-border-padding:10px 16px;
         color: $primary-800;          
       }
       &:focus {
-          outline: none;
-          border: none;
-          box-shadow: 0 0 0 $space-xxs $primary-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;          
+        @include focus-ring($primary-bright);     
       }
       &:disabled {
           color: $neutral-200;
@@ -121,7 +115,6 @@ $button-border-padding:10px 16px;
 
 .ax-btn-success {
     background: $success;
-    
     &:hover {
         background: $success-dark;
       }
@@ -129,10 +122,7 @@ $button-border-padding:10px 16px;
           background: $success-deep;
       }
       &:focus {
-          outline: none;
-          box-shadow: 0px 0px 0px $space-xxs $success-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $success-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $success-bright;
+        @include focus-ring($success-bright);
       }
       &:disabled {
         background: $success-bright;
@@ -144,18 +134,14 @@ $button-border-padding:10px 16px;
 
 .ax-btn-info {
     background: $info;
-    
     &:hover {
         background: $info-dark;
       }
-      &:active {
-          background: $info-deep;
-      }
-      &:focus {
-          outline: none;
-          box-shadow: 0px 0px 0px $space-xxs $info-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $info-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $info-bright;
+    &:active {
+        background: $info-deep;
+    }
+    &:focus {
+        @include focus-ring($info-bright);
       }
       &:disabled {
         background: $info-bright;
@@ -167,7 +153,6 @@ $button-border-padding:10px 16px;
 
 .ax-btn-warning {
     background: $warning;
-    
     &:hover {
         background: $warning-dark;
       }
@@ -175,10 +160,7 @@ $button-border-padding:10px 16px;
           background: $warning-deep;
       }
       &:focus {
-          outline: none;
-          box-shadow: 0px 0px 0px $space-xxs $warning-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $warning-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $warning-bright;
+        @include focus-ring($warning-bright);
       }
       &:disabled {
         background: $warning-bright;
@@ -190,20 +172,16 @@ $button-border-padding:10px 16px;
 
 .ax-btn-danger {
     background: $danger;
-    
     &:hover {
         background: $danger-dark;
-      }
-      &:active {
-          background: $danger-deep;
-      }
-      &:focus {
-          outline: none;
-          box-shadow: 0px 0px 0px $space-xxs $danger-bright;
-          -moz-box-shadow: 0px 0px 0px $space-xxs $danger-bright;
-          -webkit-box-shadow: 0px 0px 0px $space-xxs $danger-bright;
-      }
-      &:disabled {
+    }
+    &:active {
+        background: $danger-deep;
+    }
+    &:focus {
+        @include focus-ring($danger-bright);
+    }
+    &:disabled {
         background: $danger-bright;
         &:hover {
             background: $danger-bright;
@@ -224,16 +202,14 @@ $button-border-padding:10px 16px;
       }
       &:focus {
           outline: none;
-          text-decoration: underline;        
-
-        //   box-shadow: 0px 0px 0px $space-xxs $primary-bright;
-        //   -moz-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
-        //   -webkit-box-shadow: 0px 0px 0px $space-xxs $primary-bright;
+          text-decoration: underline;
       }
       &:disabled {
-        background: $neutral-200;
+        color: $primary-bright;
+        text-decoration: none;    
         &:hover {
             background: transparent;
         }  
     }        
 }
+
