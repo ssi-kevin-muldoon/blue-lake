@@ -12,18 +12,18 @@ export enum type {
     link = "link",
 }
 
+
 interface IAXButtonProps {
     type: type,
     disabled?: boolean,
-    text?: string,
-    icon_left?: object,
-    icon_right?: string,
+    iconLeft?: object,
+    iconRight?: object,
     onClick: (event: React.MouseEvent<HTMLButtonElement>) => void,
     title: string,
 }
 
 export class AXButton extends Component<IAXButtonProps> {
-
+    // console.log(x: string)
     private name: string = 'ax-btn'
     private myRef = createRef<HTMLButtonElement>()
 
@@ -40,6 +40,7 @@ export class AXButton extends Component<IAXButtonProps> {
     componentDidMount() {
         // const node = this.myRef.current!
         // if (node) { node.focus() }
+ 
     }
 
     private onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -63,15 +64,15 @@ export class AXButton extends Component<IAXButtonProps> {
         result.push(baseClass);
         result.push(baseClass + '-' + this.props.type)
 
-        if (this.props.icon_left && this.props.children && this.props.icon_right) {
+        if (this.props.iconLeft && this.props.children && this.props.iconRight) {
             result.push(`${baseClass}-icon-text-icon`);
-        } else if (this.props.icon_left && this.props.children) {
+        } else if (this.props.iconLeft && this.props.children) {
             result.push(`${baseClass}-icon-text`);
-        } else if (this.props.children && this.props.icon_right) {
+        } else if (this.props.children && this.props.iconRight) {
             result.push(`${baseClass}-text-icon`);
-        } else if (this.props.children) {
+        } else if (this.props.children != null) {
             result.push(`${baseClass}-text`);
-        } else if (this.props.icon_left) {
+        } else if (this.props.iconLeft) {
             result.push(`${baseClass}-icon`);
         } else {
             throw "Axiom Design System does not recognize this button format.";
@@ -87,8 +88,9 @@ export class AXButton extends Component<IAXButtonProps> {
             disabled={this.props.disabled}
             onMouseDown={this.onMouseDown}
             onClick={this.onClick}>
-                {this.props.icon_left}
+                {this.props.iconLeft ? <i className="icon-left">{this.props.iconLeft}</i> : <i/>}
                 {this.props.children}
+                {this.props.iconRight ? <i className="icon-right">{this.props.iconRight}</i> : <i/>}
         </button>
     }
 

@@ -9,7 +9,6 @@
     -webkit-box-shadow: 0px 0px 0px $space-xxs $color;
 }
 
-$font-family: "Open Sans";
 $height: 36px;
 $font-size: 14px;
 $min-width: 120px;
@@ -25,8 +24,22 @@ $min-width: 120px;
   min-width: $min-width;
   border: none;
   border-radius: $space-xxs;
-  padding: 0px $space-m 1px $space-m;
+  padding-top: 0px;
+  padding-right: $space-m;
+  padding-bottom: 1px; // A 'futz' to make type appear centered in button
+  padding-left: $space-m;
   margin: $space-m $space-m $space-m 0px; // remove this later, make 'margin' a function of containers.
+  .icon-left {
+    justify-content: flex-start;
+    text-align: right;
+    margin-right: $space-s;
+  }
+  .icon-right {
+    justify-content: flex-start;
+    text-align: right;
+    margin-left: $space-s;
+  }
+  cursor: pointer;
 }
 
 .ax-btn-primary {
@@ -42,18 +55,13 @@ $min-width: 120px;
           @include focus-ring($primary-bright);
       }
       &:disabled {
+        cursor: default;
         background: $primary-bright;
         &:hover {
             background: $primary-bright;
         }  
     }        
 }
-
-.axiom-icon {
-    justify-content: flex-start;
-    text-align: left;
-    margin-right: $space-s;
-  }
 
 .ax-btn-secondary {
     font-weight: $normal;
@@ -68,28 +76,37 @@ $min-width: 120px;
         color: $white;          
         background: $primary;
         border: 1px solid $primary;
-        .axiom-icon {
-            color:$white;
+        .icon-left {
+            color:$white; 
           }
+          .icon-right {
+            color: $white;
+          }           
       }
       &:focus {
           @include focus-ring($primary-bright);
       }
       &:disabled {
+        background: $white;
           color: $neutral-200;
-          .axiom-icon {
+          .icon-left {
             color:$neutral-200;
           }
-          &:hover {
+          .icon-right {
+            color: $neutral-200;
+          }          
+        &:hover {
             background: $white;
-        }            
+        }
+        cursor: default;
+  
     }
-    .axiom-icon {
-        justify-content: flex-start;
-        text-align: left;
+    .icon-left {
         color: $primary;
-        margin-right: $space-s;
       }
+      .icon-right {
+        color: $neutral-800;
+      }      
 }
 
 .ax-btn-tertiary {
@@ -109,7 +126,9 @@ $min-width: 120px;
           color: $neutral-200;
           &:hover {
             background: transparent;
-        }            
+        }
+        cursor: default;
+
     }
 }
 
@@ -126,6 +145,7 @@ $min-width: 120px;
       }
       &:disabled {
         background: $success-bright;
+        cursor: default;
         &:hover {
             background: $success-bright;
         }  
@@ -145,6 +165,7 @@ $min-width: 120px;
       }
       &:disabled {
         background: $info-bright;
+        cursor: default;
         &:hover {
             background: $info-bright;
         }  
@@ -164,6 +185,7 @@ $min-width: 120px;
       }
       &:disabled {
         background: $warning-bright;
+        cursor: default;
         &:hover {
             background: $warning-bright;
         }  
@@ -183,6 +205,7 @@ $min-width: 120px;
     }
     &:disabled {
         background: $danger-bright;
+        cursor: default;
         &:hover {
             background: $danger-bright;
         }  
@@ -206,10 +229,20 @@ $min-width: 120px;
       }
       &:disabled {
         color: $primary-bright;
-        text-decoration: none;    
+        text-decoration: none;
+        cursor: default;
         &:hover {
             background: transparent;
         }  
     }        
+}
+
+// Not happy with this futz.
+.ax-btn-icon {
+    min-width: $height !important;
+    width: $height;
+    .icon-left {
+        margin: 0px 0px 0px -4px !important;
+    }
 }
 
