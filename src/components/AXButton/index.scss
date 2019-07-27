@@ -2,6 +2,27 @@
 @import '../../stylesheets/globals/_fonts.scss';
 @import '../../stylesheets/globals/_spaces.scss';
 
+:export {
+    baseName: ax-btn;
+    primary: ax-btn-primary;
+    secondary: ax-btn-secondary;
+    tertiary: ax-btn-tertiary;
+    success: ax-btn-success;
+    info: ax-btn-info;
+    warning: ax-btn-warning;
+    danger: ax-btn-danger;
+    link: ax-btn-link;
+
+    iconTextIcon: -icon-text-icon;
+    iconText: -icon-text;
+    textIcon: -text-icon;
+    text: -text;
+    icon: -icon;
+
+    iconLeft: icon-left;
+    iconRight: icon-right;
+}
+
 @mixin focus-ring($color) {
     outline: none;
     box-shadow: 0px 0px 0px $space-xxs $color;
@@ -70,9 +91,11 @@ $min-width: 120px;
     border: 1px solid $secondary-075;
     &:hover {
         background: $secondary-075;
+        .icon-right {
+            color: $primary;
+        }        
       }
       &:active {
-        // font-weight: $semi-bold;
         color: $white;          
         background: $primary;
         border: 1px solid $primary;
@@ -81,7 +104,7 @@ $min-width: 120px;
           }
           .icon-right {
             color: $white;
-          }           
+          }                
       }
       &:focus {
           @include focus-ring($primary-bright);
@@ -95,11 +118,13 @@ $min-width: 120px;
           .icon-right {
             color: $neutral-200;
           }          
-        &:hover {
-            background: $white;
-        }
+        // &:hover {
+        //     background: $white;
+        //     .icon-right {
+        //         color: $primary;
+        //     }
+        // }
         cursor: default;
-  
     }
     .icon-left {
         color: $primary;
