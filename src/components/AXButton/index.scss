@@ -1,6 +1,6 @@
-@import '../../stylesheets/globals/_colors.scss';
-@import '../../stylesheets/globals/_fonts.scss';
-@import '../../stylesheets/globals/_spaces.scss';
+@import '../../styles/globals/_colors.scss';
+@import '../../styles/globals/_fonts.scss';
+@import '../../styles/globals/_spaces.scss';
 
 :export {
     baseName: ax-btn;
@@ -62,6 +62,9 @@ $min-width: 120px;
     justify-content: flex-start;
     text-align: right;
     margin-right: $space-s;
+    fill:$white;
+    width:14px;
+    height:14px;
   }
   .icon-right {
     justify-content: flex-start;

@@ -1,5 +1,7 @@
 import React, { Component, createRef } from 'react';
-import * as styles from './index.scss'; 
+import * as styles from './index.scss';
+// import { ReactComponent as Icon} from './assets/svg/activity.svg';
+import { ReactComponent as Icon} from '../../assets/svg/activity.svg';
 
 export enum type {
     primary = "primary",
