@@ -34,7 +34,16 @@ $height: 36px;
 $font-size: 14px;
 $min-width: 120px;
 
+@mixin rounded-corner($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
 .ax-btn {
+    
+    @include rounded-corner($space-xxs);
+
   font-family: $font-family;
   font-weight: $semi-bold;
   font-size: $font-size;
@@ -44,7 +53,6 @@ $min-width: 120px;
   height: $height;
   min-width: $min-width;
   border: none;
-  border-radius: $space-xxs;
   padding-top: 0px;
   padding-right: $space-m;
   padding-bottom: 1px; // A 'futz' to make type appear centered in button
