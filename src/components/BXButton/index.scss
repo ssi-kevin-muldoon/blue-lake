@@ -3,24 +3,24 @@
 @import '../../styles/globals/_spaces.scss';
 
 :export {
-    baseName: ax-btn;
-    primary: ax-btn-primary;
-    secondary: ax-btn-secondary;
-    tertiary: ax-btn-tertiary;
-    success: ax-btn-success;
-    info: ax-btn-info;
-    warning: ax-btn-warning;
-    danger: ax-btn-danger;
-    link: ax-btn-link;
+    baseName: unquote("ax-btn");
+    primary: unquote("ax-btn-primary");
+    secondary: unquote("ax-btn-secondary");
+    tertiary: unquote("ax-btn-tertiary");
+    success: unquote("ax-btn-success");
+    info: unquote("ax-btn-info");
+    warning: unquote("ax-btn-warning");
+    danger: unquote("ax-btn-danger");
+    link: unquote("ax-btn-link");
 
-    iconTextIcon: -icon-text-icon;
-    iconText: -icon-text;
-    textIcon: -text-icon;
-    text: -text;
-    icon: -icon;
+    iconTextIcon: unquote("-icon-text-icon");
+    iconText: unquote("-icon-text");
+    textIcon: unquote("-text-icon");
+    text: unquote("-text");
+    icon: unquote("-icon");
 
-    iconLeft: icon-left;
-    iconRight: icon-right;
+    iconLeft: unquote(icon-left);
+    iconRight: unquote(icon-right);
 }
 
 @mixin focus-ring($color) {
