@@ -15,15 +15,14 @@ const BXButton: React.FunctionComponent<IBXButtonProps> = props => {
     const self = createRef<HTMLButtonElement>()
 
     const onMouseDown = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const node = self.current!
-        if (node.disabled) return
+        const node: HTMLButtonElement | null | undefined = self.current
+        if (node == null || node.disabled) return;
         event.preventDefault()
     }
 
     const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        const node = self.current!
-        console.log(node)
-        if (node.disabled) return
+        const node: HTMLButtonElement | null | undefined = self.current
+        if (node == null || node.disabled) return;
         node.blur()
         props.onClick(event)
     }

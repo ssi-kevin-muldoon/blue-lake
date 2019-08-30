@@ -8,17 +8,17 @@ $primary-dark: $primary-600;
 $primary-light: $primary-200;
 $primary-bright: $primary-100;
 
-$secondary: $secondary-400;
-$secondary-deep: $secondary-800;
-$secondary-dark: $secondary-600;
-$secondary-light: $secondary-200;
-$secondary-bright: $secondary-100;
+$secondary: $primary-400;
+$secondary-deep: $primary-800;
+$secondary-dark: $primary-600;
+$secondary-light: $primary-200;
+$secondary-bright: $primary-100;
 
-$tertiary: $tertiary-400;
-$tertiary-deep: $tertiary-800;
-$tertiary-dark: $tertiary-600;
-$tertiary-light: $tertiary-200;
-$tertiary-bright: $tertiary-100;
+$tertiary: $primary-400;
+$tertiary-deep: $primary-800;
+$tertiary-dark: $primary-600;
+$tertiary-light: $primary-200;
+$tertiary-bright: $primary-100;
 
 $success: $success-400;
 $success-deep: $success-800;
@@ -44,22 +44,102 @@ $danger-dark: $danger-600;
 $danger-light: $danger-200;
 $danger-bright: $danger-100;
 
+$neutral: $neutral-400;
+$neutral-deep: $neutral-800;
+$neutral-dark: $neutral-600;
+$neutral-light: $neutral-200;
+$neutral-bright: $neutral-100;
+
+$chrome: rgba($neutral-800, 0.8);
+
+// Legacy colors
+
 $light-0: $neutral-000;
 $light-1: $neutral-025;
 $light-2: $neutral-050;
 $light-3: $neutral-075;
-$light-4: $neutral-100;
+$light-4: $neutral-bright;
 $light-5: $neutral-150;
+$light-6: $neutral-175;
 
 $dark-0: $neutral-900;
 $dark-1: $neutral-875;
 $dark-2: $neutral-850;
 $dark-3: $neutral-825;
-$dark-4: $neutral-800;
+$dark-4: $neutral-deep;
 $dark-5: $neutral-700;
+$dark-6: $neutral-dark;
 
-$black-text: $neutral-800;
-$gray-text: $neutral-200;
+$black-text: $neutral-deep;
+$gray-text: $neutral-light;
 $white: $neutral-000;
 
-$chrome: rgba($neutral-800, 0.8)
+//
+// Want to map all tokens shown below as well
+//https://github.com/researchnow/axiom-ui/blob/master/src/components/AxiomTokens.less
+//
+
+// /**** Borders ****/
+// @default-border-radius:4px;
+
+// /**** Font Sizes & Color ****/
+// @default-text-color:#25252F;
+// @default-font-family:Lato;
+// @default-font-weight:400;
+// @h1-font-size: 52px;
+// @h2-font-size: 44px;
+// @h3-font-size: 36px;
+// @h4-font-size: 30px;
+// @h5-font-size: 24px;
+// @h6-font-size: 20px;
+// @normal-text-font-size: 14px;
+// @small-text-font-size: 13px;
+// @labels-font-size: 11px;
+// @buttons-font-size: 14px;
+
+// /* New Colors */
+// @primary: #77a0dc;
+// @primary-dark:#566f9f;
+// @primary-light:#d4e0f5;
+
+// @success:#7ed0b4;
+// @success-dark:#3f5d5f;
+// @success-light:#ceece3;
+
+// @warning:#ee9585;
+
+// @error:#e37281;
+// @error-dark:#684150;
+// @error-light:#f6cfd4;
+
+// @alert:#fcd085;
+
+// @dynata-blue:#6787b7;
+// @dynata-blue-1:#6a7eab;
+// @dynata-blue-2:#63709c;
+// @dynata-blue-3:#56628f;
+// @dynata-blue-4:#4d557e;
+// @dynata-blue-5:#464c70;
+
+// @dynata-navy:#1b365d;
+// @dynata-navy-1:#1c2d56;
+// @dynata-navy-2:#1e274f;
+// @dynata-navy-3:#1c2248;
+// @dynata-navy-4:#171d40;
+// @dynata-navy-5:#111537;
+
+// @light:#ffffff;
+// @light-1:#fafafa;
+// @light-2:#f0f2f4;
+// @light-3:#e6eaf2;
+// @light-4:#dbe1ee;
+// @light-5:#d3daea;
+// @light-6:#c8cfe0;
+
+// @dark:#0f0f1c;
+// @dark-1:#151625;
+// @dark-2:#1c1e2c;
+// @dark-3:#212236;
+// @dark-4:#292a3c;
+// @dark-5:#353545;
+// @dark-6:#3c3c4b;

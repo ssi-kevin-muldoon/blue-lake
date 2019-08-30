@@ -2,6 +2,11 @@
 @import '../../styles/globals/_fonts.scss';
 @import '../../styles/globals/_spaces.scss';
 
+//
+// Export className variables to React so SASS file is 
+// single-source-of-truth for all classNames. Auto-complete
+// helps engineers to accuratly type the vars.
+//
 :export {
     baseName: unquote("ax-btn");
     primary: unquote("ax-btn-primary");
@@ -19,8 +24,8 @@
     text: unquote("-text");
     icon: unquote("-icon");
 
-    iconLeft: unquote(icon-left);
-    iconRight: unquote(icon-right);
+    iconLeft: unquote("icon-left");
+    iconRight: unquote("icon-right");
 }
 
 @mixin focus-ring($color) {
@@ -60,7 +65,7 @@ $min-width: 120px;
   margin: $space-m $space-m $space-m 0px; // remove this later, make 'margin' a function of containers.
   .icon-left {
     justify-content: flex-start;
-    text-align: right;
+    text-align: left;
     margin-right: $space-s;
     font-size:14px;
   }
@@ -98,9 +103,9 @@ $min-width: 120px;
     font-weight: $normal;
     color: $neutral-800;
     background: $white;
-    border: 1px solid $secondary-075;
+    border: 1px solid $neutral-bright;
     &:hover {
-        background: $secondary-075;
+        background: $neutral-bright;
         .icon-right {
             color: $primary;
         }        
@@ -128,12 +133,6 @@ $min-width: 120px;
           .icon-right {
             color: $neutral-200;
           }          
-        // &:hover {
-        //     background: $white;
-        //     .icon-right {
-        //         color: $primary;
-        //     }
-        // }
         cursor: default;
     }
     .icon-left {
@@ -152,7 +151,7 @@ $min-width: 120px;
         color: $primary;
       }
       &:active {
-        color: $primary-800;          
+        color: $primary-deep;          
       }
       &:focus {
         @include focus-ring($primary-bright);     
@@ -163,7 +162,6 @@ $min-width: 120px;
             background: transparent;
         }
         cursor: default;
-
     }
 }
 
@@ -176,7 +174,7 @@ $min-width: 120px;
           background: $success-deep;
       }
       &:focus {
-        @include focus-ring($success-bright);
+        @include focus-ring($primary-bright);
       }
       &:disabled {
         background: $success-bright;
@@ -196,7 +194,7 @@ $min-width: 120px;
         background: $info-deep;
     }
     &:focus {
-        @include focus-ring($info-bright);
+        @include focus-ring($primary-bright);
       }
       &:disabled {
         background: $info-bright;
@@ -216,7 +214,7 @@ $min-width: 120px;
           background: $warning-deep;
       }
       &:focus {
-        @include focus-ring($warning-bright);
+        @include focus-ring($primary-bright);
       }
       &:disabled {
         background: $warning-bright;
@@ -236,7 +234,7 @@ $min-width: 120px;
         background: $danger-deep;
     }
     &:focus {
-        @include focus-ring($danger-bright);
+        @include focus-ring($primary-bright);
     }
     &:disabled {
         background: $danger-bright;
